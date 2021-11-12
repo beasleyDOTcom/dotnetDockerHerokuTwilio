@@ -13,6 +13,9 @@ namespace dotnetDockerHerokuTwilio
     {
         public static void Main(string[] args)
         {
+            Console.WriteLine("heeeeeeee" + Environment.GetEnvironmentVariable("babe"));
+            Environment.SetEnvironmentVariable("ASPNETCORE_URLS", "http://*:"+ Environment.GetEnvironmentVariable("PORT"));
+            // Environment.SetEnvironmentVariable("ASPNETCORE_HTTPS_PORT", Environment.GetEnvironmentVariable("PORT"));
             CreateHostBuilder(args).Build().Run();
         }
 
