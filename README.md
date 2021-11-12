@@ -2,7 +2,7 @@ The goal of this repo is to deploy a dotnet web server that can handle open mic 
 # road map:
 - [x] deploy to heroku
 - [x] verify endpoint is live
-- [ ] establish basic classes for an open mic
+- [x] establish basic classes for an open mic
 - [ ] establish connection to the twilio api
 - [ ] modify the target for twilio's api by updating your endpoint
 - [ ] receive text from your personal number and print body of message to the console
