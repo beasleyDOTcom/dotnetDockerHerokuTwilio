@@ -13,7 +13,7 @@ RUN dotnet build "dotnetDockerHerokuTwilio.csproj" -c Release -o /app/build
 
 FROM build AS publish
 RUN dotnet publish "dotnetDockerHerokuTwilio.csproj" -c Release -o /app/publish
-
+ENV TESTING="the value of testing is immutable.. ARE YOU????"
 RUN adduser \
   --disabled-password \
   --home /app \
