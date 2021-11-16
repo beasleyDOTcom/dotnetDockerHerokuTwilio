@@ -9,7 +9,7 @@ The goal of this repo is to deploy a dotnet web server that can handle open mic 
 - [x] receive text from your personal number and print body of message to the console
 - [x] upon receipt of message return a preprogrammed message to sender
 - [x] upon receipt of message, validate
-- [ ] upon receipt of message, determine if:
-- [ ] sender is a host
-- [ ] if so, parse and validate command
+- [x] upon receipt of message, determine if:
+- [x] sender is a host
+- [x] if so, parse and validate command
 - [ ] if not, does roomcode exist? tell user either way. 
