@@ -23,7 +23,6 @@ namespace dotnetDockerHerokuTwilio.Controllers
     {
             string accountSid = Environment.GetEnvironmentVariable("TWILIO_ACCOUNT_SID");
             string authToken = Environment.GetEnvironmentVariable("TWILIO_AUTH_TOKEN");
-
             Dictionary<string, List<string>> roomCodes = new Dictionary<string, List<string>>();
             Dictionary<string, string> hosts = new Dictionary<string, string>();
 
@@ -154,19 +153,21 @@ namespace dotnetDockerHerokuTwilio.Controllers
                     else
                     {
                         // reads "close
+                        Console.WriteLine("before");
                         List<string> shuffled = shuffle(roomCodes[room]);
-                        for(int i = 0; i < shuffled.Count; i++)
+                        Console.WriteLine("after?");
+                        for(int k = 0; k < shuffled.Count; k++)
                         {
-                        var saysClose = MessageResource.Create(
-                            body:$"{i}",
-                            from: new Twilio.Types.PhoneNumber(Environment.GetEnvironmentVariable("SERVER_NUMBER")),
-                            to: new Twilio.Types.PhoneNumber(Environment.GetEnvironmentVariable(shuffled[i]))
+                            var saysClose = MessageResource.Create(
+                                body:$"{k}",
+                                from: new Twilio.Types.PhoneNumber(Environment.GetEnvironmentVariable("SERVER_NUMBER")),
+                                to: new Twilio.Types.PhoneNumber(Environment.GetEnvironmentVariable(shuffled[k]))
                             );   
                         }
-\                         var worked = MessageResource.Create(
-                            body:$"{i}",
-                            from: new Twilio.Types.PhoneNumber(Environment.GetEnvironmentVariable("SERVER_NUMBER")),
-                            to: new Twilio.Types.PhoneNumber(Environment.GetEnvironmentVariable("PERSONAL_NUMBER"))
+                            var worked = MessageResource.Create(
+                                body:$"worked line 167",
+                                from: new Twilio.Types.PhoneNumber(Environment.GetEnvironmentVariable("SERVER_NUMBER")),
+                                to: new Twilio.Types.PhoneNumber(Environment.GetEnvironmentVariable("PERSONAL_NUMBER"))
                             );  
                         return worked;
                     }
