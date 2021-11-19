@@ -7,7 +7,7 @@ namespace dotnetDockerHerokuTwilio
 {
     public class Performance
     {
-        public List<Performer> Performers { get; set; }
+        public virtual List<Performer> Performers { get; set; }
         public string GroupAnnouncedAs { get; set; }
         public string PerformanceContactName { get; set; }
         public string PerformanceContactNumber { get; set; }
