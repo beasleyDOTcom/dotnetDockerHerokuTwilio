@@ -14,7 +14,7 @@ namespace dotnetDockerHerokuTwilio
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("heeeeeeee" + Environment.GetEnvironmentVariable("babe"));
+            Console.WriteLine("heeeeeeee" + Environment.GetEnvironmentVariable("PORT"));
             Environment.SetEnvironmentVariable("ASPNETCORE_URLS", "http://*:"+ Environment.GetEnvironmentVariable("PORT"));
             // Environment.SetEnvironmentVariable("ASPNETCORE_HTTPS_PORT", Environment.GetEnvironmentVariable("PORT"));
             CreateHostBuilder(args).Build().Run();
@@ -23,7 +23,8 @@ namespace dotnetDockerHerokuTwilio
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
-                {
+                {   
+                    webBuilder.UseUrls("http://localhost:4000");
                     webBuilder.UseStartup<Startup>();
                 });
     }

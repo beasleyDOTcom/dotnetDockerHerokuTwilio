@@ -5,7 +5,8 @@ using System.Threading.Tasks;
 using System.Data.Entity;
 namespace dotnetDockerHerokuTwilio
 {
-    public class OpenMicNight : DbContext // do you need this??
+    // checkout 52 min of https://www.youtube.com/watch?v=Pi46L7UYP8I to see more about defining models
+        public class OpenMicNight : DbContext // do you need this??
     {
         public string HostPhoneNumber { get; set; }
         public string VenueName { get; set; }
