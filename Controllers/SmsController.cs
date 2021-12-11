@@ -12,7 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-
+// in mvc the name of your controller (sms) should corresond to a folder in views called sms which as a default entrypoint of index
 namespace dotnetDockerHerokuTwilio.Controllers
 {       
 
@@ -42,6 +42,7 @@ namespace dotnetDockerHerokuTwilio.Controllers
             {
                 for(int i = 0; i < phoneNumbers.Count; i++)
                 {
+                    // I think the second argument could simply be??  int new Random.Next((phoneNumbers.Count)
                     swap(phoneNumbers, i, getRandomIndex(phoneNumbers.Count));
                     swap(phoneNumbers, i, getRandomIndex(phoneNumbers.Count));
                 }
